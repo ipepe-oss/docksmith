@@ -1,0 +1,13 @@
+name: app
+version: 0.1.0
+crystal: '>= 1.11.2'
+license: MIT
+authors:
+  - Patryk Ptasinski <patryk@ipepe.pl>
+targets:
+  app:
+    main: src/app.cr
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+

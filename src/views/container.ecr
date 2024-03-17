@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>DockSmith - Container - <% container["Id"] %></title>
+  <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      * {
+          padding: 5px;
+      }
+  </style>
+</head>
+<body>
+<center>
+  <% containers = [container] %>
+  <%= render "src/views/_containers_table.ecr" %>
+
+  <br/>
+
+  <table>
+    <tbody>
+      <tr>
+        <form action="/containers/<%= container["Id"] %>/logs" method="get">
+          <td>Log lines:</td>
+          <td><input type="number" name="tail_lines" value="30"></td>
+          <td><input type="submit" value="Show"></td>
+        </form>
+      </tr>
+    <tr>
+      <form action="/containers/<%= container["Id"] %>/execute" method="post">
+        <td>Command:</td>
+        <td><input type="text" name="command" value="ls -l"></td>
+        <td><input type="submit" value="Execute"></td>
+      </form>
+    </tr>
+    </tbody>
+  </table>
+</center>
+</body>
+</html>

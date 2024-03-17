@@ -1,0 +1,33 @@
+<table>
+  <thead>
+  <tr>
+    <th>CONTAINER ID</th>
+    <th>IMAGE</th>
+    <th>COMMAND</th>
+    <th>CREATED</th>
+    <th>STATUS</th>
+    <th>PORTS</th>
+    <th>NAMES</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% containers.each do |container| %>
+    <tr>
+      <td><a href="/containers/<%= container["Id"] %>"><%= container["Id"].to_s[0..10] %></a></td>
+      <td><%= container["Image"] %></td>
+      <td><%= container["Command"] %></td>
+      <td><%= Time.unix(container["Created"].to_s.to_i) %></td>
+      <td><%= container["Status"] %></td>
+      <td>
+        <% container["Ports"].as_a.each do |port| %>
+        <span>
+          <%= port["IP"] %>:<%= port["PrivatePort"] %>->
+          <% port["PublicPort"] %>/<%= port["Type"] %>
+        </span><br/>
+        <% end %>
+      </td>
+      <td><%= container["Names"].as_a.join.to_s[1..-1] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

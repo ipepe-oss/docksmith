@@ -1,0 +1,30 @@
+version: 2.0
+shards:
+  backtracer:
+    git: https://github.com/sija/backtracer.cr.git
+    version: 1.2.2
+
+  docker-api:
+    git: https://github.com/ipepe-oss/docker-api.git
+    version: 0.2.1+git.commit.cb5cd257d12e212f0b2df51e0f29fa25307a103f
+
+  exception_page:
+    git: https://github.com/crystal-loot/exception_page.git
+    version: 0.3.1
+
+  halite:
+    git: https://github.com/icyleaf/halite.git
+    version: 0.12.1
+
+  json_mapping:
+    git: https://github.com/crystal-lang/json_mapping.cr.git
+    version: 0.1.1
+
+  kemal:
+    git: https://github.com/kemalcr/kemal.git
+    version: 1.4.0
+
+  radix:
+    git: https://github.com/luislavena/radix.git
+    version: 0.4.1
+

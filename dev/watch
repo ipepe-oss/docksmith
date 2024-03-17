@@ -1,0 +1,3 @@
+#!/bin/bash
+cd $(dirname $0)/..
+watchexec -w src -r crystal run src/app.cr
